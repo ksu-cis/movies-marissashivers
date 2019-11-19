@@ -1,5 +1,5 @@
-﻿[
-  {
+﻿[ // list
+  { // object with key-value pairs
     "Title": "The Land Girls",
     "US_Gross": 146083,
     "Worldwide_Gross": 146083,
@@ -16,7 +16,7 @@
     "Rotten_Tomatoes_Rating": null,
     "IMDB_Rating": 6.1,
     "IMDB_Votes": 1071
-  },
+  }, // list items separated by a comma
   {
     "Title": "First Love, Last Rites",
     "US_Gross": 10876,
@@ -54954,7 +54954,7 @@
     "IMDB_Votes": 10233
   },
   {
-    "Title": null,
+    "Title": "Unknown",
     "US_Gross": 26403,
     "Worldwide_Gross": 3080493,
     "US_DVD_Sales": null,

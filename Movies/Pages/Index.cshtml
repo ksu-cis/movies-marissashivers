@@ -4,4 +4,98 @@
     ViewData["Title"] = "Home page";
 }
 
-<h1>Hello World</h1>
+<div class="container">
+    <div class="results">
+        <h1>Movies</h1>
+        @foreach (Movie movie in Model.Movies)
+        {
+            <div class="movie-entry">
+                <h2>
+                    @movie.Title
+                    @if (movie.Release_Year != null)
+                    {<span>(@movie.Release_Year)</span>}
+                </h2>
+                @if (@movie.Major_Genre != null)
+                {
+                    <div class="genre">
+                        @movie.Major_Genre
+                    </div>
+                }
+                @if (@movie.Director != null)
+                {
+                    <div class="director">
+                        <span>Directed by</span> @movie.Director
+                    </div>
+                }
+
+                @if (@movie.MPAA_Rating != null)
+                {
+                    <div class="rating">
+                        <span>Rated</span> @movie.MPAA_Rating
+                    </div>
+                }
+
+
+                <div class="ratings">
+                    @if (movie.IMDB_Rating != null)
+                    {
+                        <div>
+                            IMDB
+                            <h3>@movie.IMDB_Rating</h3>
+                        </div>
+                    }
+
+                    @if (movie.Rotten_Tomatoes_Rating != null)
+                    {
+                        <div>
+                            <span>Rotten Tomatoes</span>
+                            <h3>@movie.Rotten_Tomatoes_Rating</h3>
+                        </div>
+                    }
+
+                </div>
+            </div>
+
+        }
+    </div>
+    <form method="post">
+        <h4>Search by Title or Director</h4>
+        <input type="text" name="search" />
+
+        <h4>Filter by MPAA Rating</h4>
+        <label>
+            <input type="checkbox" value="G" name="npaa" />
+            Rated G
+        </label>
+        <label>
+            <input type="checkbox" value="PG" name="npaa" />
+            Rated PG
+        </label>
+        <label>
+            <input type="checkbox" value="PG-13" name="npaa" />
+            Rated PG-13
+        </label>
+        <label>
+            <input type="checkbox" value="R" name="npaa" />
+            Rated R
+        </label>
+        <label>
+            <input type="checkbox" value="NC-17" name="npaa" />
+            Rated NC-17
+        </label>
+
+        <h4>Review Score</h4>
+        <label>
+            Minimum IMDB Rating
+            <input type="number" min="0" max="10" step="0.1" name="minIMDB" />
+        </label>
+
+        <input type="submit" value="search" />
+    </form>
+</div>
+
+
+
+
+
+
