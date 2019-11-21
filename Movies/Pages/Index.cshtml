@@ -9,7 +9,7 @@
         <h1>Movies</h1>
         @foreach (Movie movie in Model.Movies)
         {
-            <div class="movie-entry">
+            <div class="movie-entry" data-title="@movie.Title data-mpaa=@movie.MPAA_Rating">
                 <h2>
                     @movie.Title
                     @if (movie.Release_Year != null)
